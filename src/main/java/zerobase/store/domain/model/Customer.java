@@ -15,6 +15,7 @@ import java.util.Locale;
 @AllArgsConstructor
 @AuditOverride(forClass = BaseEntity.class)
 public class Customer extends BaseEntity{
+
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

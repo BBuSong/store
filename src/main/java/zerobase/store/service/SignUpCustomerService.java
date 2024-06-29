@@ -15,4 +15,5 @@ public class SignUpCustomerService {
     public Customer signUp(SignUpForm form) {
         return customerRepository.save(Customer.from(form));
     }
+
 }
