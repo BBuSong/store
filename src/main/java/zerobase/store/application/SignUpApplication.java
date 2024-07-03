@@ -19,6 +19,7 @@ public class SignUpApplication {
             throw new CustomException(ErrorCode.ALREADY_REGISTER_USER);
         } else {
             Customer c = signUpCustomerService.signUp(form);
+            return "회원 가입에 성공하였습니다.";
         }
     }
 }
