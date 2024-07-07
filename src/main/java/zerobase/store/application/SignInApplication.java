@@ -6,8 +6,10 @@ import zerobase.domain.common.UserType;
 import zerobase.domain.config.JwtAuthenticationProvider;
 import zerobase.store.domain.SignInForm;
 import zerobase.store.domain.model.Customer;
+import zerobase.store.domain.model.Owner;
 import zerobase.store.exception.CustomException;
-import zerobase.store.service.CustomerService;
+import zerobase.store.service.customer.CustomerService;
+import zerobase.store.service.owner.OwnerService;
 
 import static zerobase.store.exception.ErrorCode.LOGIN_CHECK_FAIL;
 
@@ -16,6 +18,7 @@ import static zerobase.store.exception.ErrorCode.LOGIN_CHECK_FAIL;
 public class SignInApplication {
 
     private final CustomerService customerService;
+    private final OwnerService ownerService;
     private final JwtAuthenticationProvider provider;
     public String customerLoginToken(SignInForm form) {
         // 1. 로그인 가능 여부
@@ -24,5 +27,14 @@ public class SignInApplication {
         // 2. 토큰을 발행시키고
         // 3. 토큰을 response한다.
         return provider.createToken(c.getEmail(), c.getId(), UserType.CUSTOMER);
+    }
+
+    public String ownerLoginToken(SignInForm form) {
+        // 1. 로그인 가능 여부
+        Owner o = ownerService.findValidOwner(form.getEmail(), form.getPassword())
+                .orElseThrow(() -> new CustomException(LOGIN_CHECK_FAIL));
+        // 2. 토큰을 발행시키고
+        // 3. 토큰을 response한다.
+        return provider.createToken(o.getEmail(), o.getId(), UserType.OWNER);
     }
 }
