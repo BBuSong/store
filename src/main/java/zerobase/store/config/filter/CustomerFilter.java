@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import zerobase.domain.common.UserVo;
 import zerobase.domain.config.JwtAuthenticationProvider;
-import zerobase.store.service.CustomerService;
+import zerobase.store.service.customer.CustomerService;
 
 import java.io.IOException;
 

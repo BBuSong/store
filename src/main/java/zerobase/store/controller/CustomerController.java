@@ -11,7 +11,7 @@ import zerobase.domain.config.JwtAuthenticationProvider;
 import zerobase.store.domain.customer.CustomerDto;
 import zerobase.store.domain.model.Customer;
 import zerobase.store.exception.CustomException;
-import zerobase.store.service.CustomerService;
+import zerobase.store.service.customer.CustomerService;
 
 import static zerobase.store.exception.ErrorCode.NOT_FOUND_USER;
 

@@ -3,9 +3,9 @@ package zerobase.store.service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 import zerobase.store.domain.SignUpForm;
 import zerobase.store.domain.model.Customer;
+import zerobase.store.service.customer.SignUpCustomerService;
 
 import java.time.LocalDate;
 

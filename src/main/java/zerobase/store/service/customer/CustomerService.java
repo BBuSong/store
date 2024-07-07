@@ -1,4 +1,4 @@
-package zerobase.store.service;
+package zerobase.store.service.customer;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
