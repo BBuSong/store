@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project('zerobase-domain'))
+    implementation project(path: 'zerobase-domain', configuration: 'default')
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
